@@ -1,0 +1,5 @@
+{
+    "buildCommand": "cd valentines-app && npm install && npm run build",
+    "outputDirectory": "valentines-app/build",
+    "framework": "create-react-app"
+}
