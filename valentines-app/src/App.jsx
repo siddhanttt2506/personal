@@ -16,7 +16,7 @@ const photos = [
     '/WhatsApp Image 2026-02-08 at 12.17.47 PM.jpeg',
 ];
 
-const videoSrc = '/WhatsApp Video 2026-02-08 at 12.13.07 PM.mp4';
+const videoSrc = '/story-video.mp4';
 const songSrc = '/d4vd - Here With Me (Lyrics).mp3';
 
 // Skip first 17 seconds of song
