@@ -24,7 +24,7 @@ function Celebration({ photos, name }) {
                             left: `${Math.random() * 100}%`,
                             backgroundColor: ['#ff6b9d', '#a855f7', '#f4d03f', '#ff4757', '#5352ed'][Math.floor(Math.random() * 5)],
                             animationDelay: `${Math.random() * 3}s`,
-                            animationDuration: `${3 + Math.random() * 2}s`,
+                            animationDuration: `${5 + Math.random() * 3}s`, // slightly slower
                         }}
                     />
                 ))}
@@ -38,8 +38,8 @@ function Celebration({ photos, name }) {
                         className="celebration-heart"
                         style={{
                             left: `${Math.random() * 100}%`,
-                            animationDelay: `${Math.random() * 5}s`,
-                            animationDuration: `${5 + Math.random() * 5}s`,
+                            animationDelay: `${Math.random() * 8}s`,
+                            animationDuration: `${10 + Math.random() * 8}s`, // significantly slower
                             fontSize: `${1 + Math.random() * 2}rem`,
                         }}
                     >💗</span>
@@ -93,8 +93,8 @@ function Celebration({ photos, name }) {
                             className="floating-emoji"
                             style={{
                                 left: `${Math.random() * 100}%`,
-                                animationDelay: `${Math.random() * 10}s`,
-                                animationDuration: `${8 + Math.random() * 7}s`,
+                                animationDelay: `${Math.random() * 15}s`, // Increased delay randomness
+                                animationDuration: `${15 + Math.random() * 10}s`, // Significantly slower (was 8+7)
                             }}
                         >{emoji}</span>
                     ))

@@ -7,17 +7,26 @@ import LyricScene from './components/LyricScene';
 import ValentineAsk from './components/ValentineAsk';
 import Celebration from './components/Celebration';
 
+// Import assets
+import photo1 from './assets/photo1.jpeg';
+import photo2 from './assets/photo2.jpeg';
+import photo3 from './assets/photo3.jpeg';
+import photo4 from './assets/photo4.jpeg';
+import photo5 from './assets/photo5.jpeg';
+import storyVideo from './assets/story-video.mp4';
+import song from './assets/song.mp3';
+
 // Photo assets
 const photos = [
-    '/WhatsApp Image 2026-02-08 at 12.12.42 PM.jpeg',
-    '/WhatsApp Image 2026-02-08 at 12.14.11 PM.jpeg',
-    '/WhatsApp Image 2026-02-08 at 12.14.37 PM.jpeg',
-    '/WhatsApp Image 2026-02-08 at 12.14.53 PM.jpeg',
-    '/WhatsApp Image 2026-02-08 at 12.17.47 PM.jpeg',
+    photo1,
+    photo2,
+    photo3,
+    photo4,
+    photo5,
 ];
 
-const videoSrc = '/story-video.mp4';
-const songSrc = '/d4vd - Here With Me (Lyrics).mp3';
+const videoSrc = storyVideo;
+const songSrc = song;
 
 // Skip first 17 seconds of song
 const SONG_START_OFFSET = 17;
