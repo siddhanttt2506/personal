@@ -2,20 +2,22 @@ import React, { useEffect, useState } from 'react';
 
 function Celebration({ photos, name }) {
     const [stage, setStage] = useState(0);
+    const [fading, setFading] = useState(false);
 
     useEffect(() => {
         const timers = [
             setTimeout(() => setStage(1), 500),
             setTimeout(() => setStage(2), 1500),
             setTimeout(() => setStage(3), 2500),
+            setTimeout(() => setFading(true), 8000), // Start fading confetti after 8s
         ];
         return () => timers.forEach(clearTimeout);
     }, []);
 
     return (
-        <div className="celebration-scene">
+        <div className="celebration-scene" style={{ background: 'transparent' }}>
             {/* Confetti explosion */}
-            <div className="confetti-container">
+            <div className={`confetti-container ${fading ? 'fade-out' : ''}`}>
                 {[...Array(100)].map((_, i) => (
                     <div
                         key={i}
@@ -31,7 +33,7 @@ function Celebration({ photos, name }) {
             </div>
 
             {/* Hearts rain */}
-            <div className="celebration-hearts">
+            <div className={`celebration-hearts ${fading ? 'fade-out' : ''}`}>
                 {[...Array(50)].map((_, i) => (
                     <span
                         key={i}
@@ -85,7 +87,7 @@ function Celebration({ photos, name }) {
             </div>
 
             {/* Floating emojis */}
-            <div className="floating-emojis">
+            <div className={`floating-emojis ${fading ? 'fade-out' : ''}`}>
                 {['💕', '💗', '💖', '💝', '❤️', '🥰', '😍', '💘'].map((emoji, i) => (
                     [...Array(5)].map((_, j) => (
                         <span

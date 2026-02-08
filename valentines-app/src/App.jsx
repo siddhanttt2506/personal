@@ -111,14 +111,22 @@ function App() {
 
     // Start the experience - skip to 17 seconds
     const handleStart = async () => {
-        setHasStarted(true);
         try {
-            audioRef.current.currentTime = SONG_START_OFFSET; // Start at 17 seconds
-            await audioRef.current.play();
+            if (audioRef.current) {
+                audioRef.current.currentTime = SONG_START_OFFSET; // Start at 17 seconds
+                await audioRef.current.play();
+                setHasStarted(true);
+            }
         } catch (error) {
-            console.error('Audio play failed:', error);
+            console.log('Autoplay blocked (waiting for interaction):', error);
+            // Keep hasStarted false so LandingPage shows for manual interaction
         }
     };
+
+    // Attempt autoplay on mount
+    useEffect(() => {
+        handleStart();
+    }, []);
 
     // Handle Valentine response
     const handleValentineResponse = (response) => {

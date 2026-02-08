@@ -37,23 +37,10 @@ function LandingPage({ onStart }) {
                     </div>
                 </div>
 
-                {/* Play button */}
-                <button
-                    className={`play-button ${isHovered ? 'hovered' : ''}`}
-                    onClick={onStart}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                >
-                    <div className="play-button-ring" />
-                    <div className="play-button-ring ring-2" />
-                    <div className="play-button-ring ring-3" />
-                    <div className="play-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z" />
-                        </svg>
-                    </div>
-                    <span className="play-text">Play Our Story</span>
-                </button>
+                {/* Tap to start prompt */}
+                <div className="tap-prompt">
+                    <p>Tap anywhere to start</p>
+                </div>
 
             </div>
 
