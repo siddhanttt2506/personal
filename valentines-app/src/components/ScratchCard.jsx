@@ -14,12 +14,10 @@ const ScratchCard = ({ onYesClick }) => {
         const ctx = canvas.getContext('2d');
         const rect = canvas.getBoundingClientRect();
 
-        // Set canvas size to match display size
         canvas.width = rect.width * 2;
         canvas.height = rect.height * 2;
         ctx.scale(2, 2);
 
-        // Create golden gradient overlay
         const gradient = ctx.createLinearGradient(0, 0, rect.width, rect.height);
         gradient.addColorStop(0, '#FFD700');
         gradient.addColorStop(0.5, '#FFC107');
@@ -28,7 +26,6 @@ const ScratchCard = ({ onYesClick }) => {
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, rect.width, rect.height);
 
-        // Add shimmer effect
         ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
         for (let i = 0; i < 5; i++) {
             ctx.beginPath();
@@ -40,12 +37,11 @@ const ScratchCard = ({ onYesClick }) => {
             ctx.fill();
         }
 
-        // Add text
         ctx.fillStyle = '#8B4513';
         ctx.font = 'bold 16px Poppins, sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText('✨ Scratch Here ✨', rect.width / 2, rect.height / 2 - 10);
+        ctx.fillText('✦ Scratch Here ✦', rect.width / 2, rect.height / 2 - 10);
         ctx.font = '12px Poppins, sans-serif';
         ctx.fillText('to reveal a surprise', rect.width / 2, rect.height / 2 + 15);
 
@@ -76,7 +72,6 @@ const ScratchCard = ({ onYesClick }) => {
         ctx.arc(pos.x, pos.y, 25, 0, 2 * Math.PI);
         ctx.fill();
 
-        // Draw line from last position for smooth scratching
         if (lastPosRef.current.x && lastPosRef.current.y) {
             ctx.lineWidth = 50;
             ctx.lineCap = 'round';
@@ -131,13 +126,13 @@ const ScratchCard = ({ onYesClick }) => {
     return (
         <div className="scratch-page">
             <div className="scratch-header">
-                <h1>Hey Beautiful 💕</h1>
+                <h1>Hey Beautiful</h1>
                 <p>I have something special for you...</p>
             </div>
 
             <div className="scratch-card-container">
                 <div className="scratch-card-revealed">
-                    <div className="revealed-heart">💝</div>
+                    <div className="revealed-heart">♥</div>
                     <div className="revealed-text">
                         Will You Be<br />My Valentine?
                     </div>
@@ -159,7 +154,7 @@ const ScratchCard = ({ onYesClick }) => {
             </div>
 
             <p className="scratch-instruction">
-                {isRevealed ? "Now answer me... 👇" : "Use your finger to scratch ☝️"}
+                {isRevealed ? "Now answer me..." : "Use your finger to scratch"}
             </p>
 
             <button
@@ -167,7 +162,7 @@ const ScratchCard = ({ onYesClick }) => {
                 onClick={onYesClick}
                 disabled={!isRevealed}
             >
-                YES! 💕
+                YES
             </button>
         </div>
     );

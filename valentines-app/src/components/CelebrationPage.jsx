@@ -10,17 +10,18 @@ const CelebrationPage = () => {
 
     const handleOpen = () => {
         if (phase === 'gift') {
-            // Start explosion
             setShowBurst(true);
             setPhase('explosion');
 
-            // After explosion, transition to photos
             setTimeout(() => {
                 setPhase('photos');
                 setShowBurst(false);
             }, 1500);
         }
     };
+
+    // Premium romantic emojis
+    const explosionEmojis = ['♥', '♡', '❤', '✦', '✧', '♥', '❤', '✦'];
 
     return (
         <div className={`celebration-page phase-${phase}`}>
@@ -31,13 +32,13 @@ const CelebrationPage = () => {
             {phase === 'gift' && (
                 <div className="gift-phase">
                     <div className="celebration-header">
-                        <h1>Yay! 🎉</h1>
-                        <p>I knew you'd say yes!</p>
+                        <h1>Yay!</h1>
+                        <p>I knew you'd say yes</p>
                     </div>
 
                     <GiftBox isOpened={false} onOpen={handleOpen} />
 
-                    <p className="tap-hint">Tap the gift to open it! 🎁</p>
+                    <p className="tap-hint">Tap the gift to open</p>
                 </div>
             )}
 
@@ -55,12 +56,12 @@ const CelebrationPage = () => {
                                     '--distance': `${150 + Math.random() * 100}px`
                                 }}
                             >
-                                {['❤️', '💕', '💖', '💗', '💝', '🌹', '✨'][i % 7]}
+                                {explosionEmojis[i % explosionEmojis.length]}
                             </div>
                         ))}
                     </div>
                     <div className="explosion-text">
-                        <span>💝</span>
+                        <span>♥</span>
                     </div>
                 </div>
             )}
@@ -69,16 +70,16 @@ const CelebrationPage = () => {
             {phase === 'photos' && (
                 <div className="photos-phase">
                     <div className="celebration-header small">
-                        <h1>Our Memories 💕</h1>
+                        <h1>Our Memories</h1>
                     </div>
 
                     <PhotoCarousel />
 
                     <div className="final-message">
-                        <h2>I Love You 💕</h2>
+                        <h2>I Love You</h2>
                         <p>
-                            Thank you for being my Valentine!<br />
-                            You mean the world to me ❤️
+                            Thank you for being my Valentine<br />
+                            You mean the world to me
                         </p>
                     </div>
                 </div>

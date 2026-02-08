@@ -12,7 +12,7 @@ const HeartBackground = () => {
                 animationDuration: 4 + Math.random() * 4,
                 size: 14 + Math.random() * 16,
                 delay: Math.random() * 2,
-                emoji: ['💕', '💗', '💖', '💝', '❤️', '💘'][Math.floor(Math.random() * 6)]
+                emoji: ['♥', '♡', '✦', '♥', '♡', '✧'][Math.floor(Math.random() * 6)]
             };
 
             setHearts(prev => [...prev, heart]);
@@ -22,7 +22,6 @@ const HeartBackground = () => {
             }, (heart.animationDuration + heart.delay) * 1000);
         };
 
-        // Initial hearts
         for (let i = 0; i < 8; i++) {
             setTimeout(createHeart, i * 300);
         }

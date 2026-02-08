@@ -14,7 +14,7 @@ const HeartBurst = () => {
             id: i,
             tx,
             ty,
-            emoji: ['❤️', '💕', '💖', '💗', '💝'][Math.floor(Math.random() * 5)]
+            symbol: ['♥', '♡', '✦', '♥', '♡'][i % 5]
         });
     }
 
@@ -29,7 +29,7 @@ const HeartBurst = () => {
                         '--ty': `${heart.ty}px`,
                     }}
                 >
-                    {heart.emoji}
+                    {heart.symbol}
                 </div>
             ))}
         </div>

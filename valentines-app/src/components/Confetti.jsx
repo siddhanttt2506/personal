@@ -4,8 +4,8 @@ const Confetti = () => {
     const [pieces, setPieces] = useState([]);
 
     useEffect(() => {
-        const colors = ['#FF6B95', '#E63946', '#FFD700', '#FFD6E0', '#FF69B4', '#FFC0CB'];
-        const shapes = ['■', '●', '▲', '★', '💕', '❤️'];
+        const colors = ['#FF6B95', '#E63946', '#FFD700', '#FFD6E0', '#FF85A2', '#FFC0CB'];
+        const shapes = ['♥', '♡', '✦', '✧', '●', '■'];
 
         const createConfetti = () => {
             const newPieces = [];
@@ -25,7 +25,6 @@ const Confetti = () => {
 
         createConfetti();
 
-        // Create more confetti periodically
         const interval = setInterval(() => {
             createConfetti();
         }, 5000);
