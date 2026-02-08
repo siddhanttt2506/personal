@@ -118,15 +118,10 @@ function App() {
                 setHasStarted(true);
             }
         } catch (error) {
-            console.log('Autoplay blocked (waiting for interaction):', error);
-            // Keep hasStarted false so LandingPage shows for manual interaction
+            console.error('Audio play failed:', error);
         }
     };
 
-    // Attempt autoplay on mount
-    useEffect(() => {
-        handleStart();
-    }, []);
 
     // Handle Valentine response
     const handleValentineResponse = (response) => {
