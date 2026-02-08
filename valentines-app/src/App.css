@@ -2356,6 +2356,14 @@ body {
     font-size: 0.7rem;
     padding: 6px 12px;
   }
+
+  .photo-layer {
+    bottom: 8%;
+  }
+
+  .lyric-layer {
+    margin-bottom: 2rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
