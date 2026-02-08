@@ -3,7 +3,6 @@ import React, { useEffect, useState, useRef } from 'react';
 function LyricScene({ scene, photos, videoSrc, currentTime, allPhotos }) {
     const [isVisible, setIsVisible] = useState(false);
     const [showPhoto, setShowPhoto] = useState(false);
-    const [videoError, setVideoError] = useState(null);
     const videoRef = useRef(null);
     const prevSceneRef = useRef(null);
 
@@ -235,19 +234,10 @@ function LyricScene({ scene, photos, videoSrc, currentTime, allPhotos }) {
                         muted
                         playsInline
                         autoPlay
-                        controls
-                        onError={(e) => {
-                            console.error("Video error:", e);
-                            setVideoError(e.target.error ? e.target.error.message : "Video loading error");
-                        }}
+                        loop
                     />
-                    {videoError && <p style={{ color: 'red', position: 'absolute', top: 0, background: 'rgba(0,0,0,0.8)' }}>Error: {videoError}</p>}
                     <div className="video-overlay" />
                 </div>
-                {/* DEBUG: Show the video source path */}
-                <p style={{ color: 'red', fontSize: '10px', marginTop: '5px' }}>
-                    Src: {videoSrc}
-                </p>
                 <p className="video-caption">{scene.text}</p>
             </div>
         );
